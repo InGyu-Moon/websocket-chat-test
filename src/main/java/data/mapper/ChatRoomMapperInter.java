@@ -1,9 +1,8 @@
 package data.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.example.chat.chatroom.ChatRoomDto;
+import data.chat.chatroom.ChatRoomDto;
 
-import java.util.List;
 
 @Mapper
 public interface ChatRoomMapperInter {

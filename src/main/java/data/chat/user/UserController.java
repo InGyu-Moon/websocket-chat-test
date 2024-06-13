@@ -1,4 +1,4 @@
-package org.example.chat.user;
+package data.chat.user;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

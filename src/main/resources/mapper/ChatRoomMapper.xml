@@ -7,7 +7,4 @@
     <insert id="insertChatRoom" parameterType="ChatRoomDto">
         insert into chat_room(chatId, senderId, recipientId) values(#{chatId}, #{senderId}, #{recipientId})
     </insert>
-    <select id="findByChatId" parameterType="String" resultType="ChatRoomDto">
-        select * from chat_room where chatId = #{chatId}
-    </select>
 </mapper>

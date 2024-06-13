@@ -1,4 +1,4 @@
-package org.example.chat.chat;
+package data.chat.chat;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -22,15 +22,24 @@ public class ChatController {
     public void processMessage(
             @Payload ChatMessageDto chatMessageDto
     ){
+
+
+        System.out.println("chatMessageDto.toString() = " + chatMessageDto.toString());
+
         ChatMessageDto savedMsg = chatMessageService.save(chatMessageDto);
+
+        System.out.println("savedMsg.toString() = " + savedMsg.toString());
+        
+        
+        
         messagingTemplate.convertAndSendToUser(
-                chatMessageDto.getRecipientId(), "/queue/messages",
-                ChatNotification.builder()
-                        .id(savedMsg.getId())
-                        .senderId(savedMsg.getSenderId())
-                        .recipientId(savedMsg.getRecipientId())
-                        .content(savedMsg.getContent())
-                        .build()
+                chatMessageDto.getRecipientId(), "/queue/messages", savedMsg
+//                ChatNotification.builder()
+////                        .id(savedMsg.getId())
+//                        .senderId(savedMsg.getSenderId())
+//                        .recipientId(savedMsg.getRecipientId())
+//                        .content(savedMsg.getContent())
+//                        .build()
         );
 
     }

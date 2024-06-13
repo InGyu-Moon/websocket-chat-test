@@ -1,8 +1,7 @@
 package data.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.example.chat.chat.ChatMessageDto;
-import org.example.chat.chatroom.ChatRoomDto;
+import data.chat.chat.ChatMessageDto;
 
 import java.util.List;
 

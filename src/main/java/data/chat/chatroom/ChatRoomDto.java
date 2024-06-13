@@ -1,4 +1,4 @@
-package org.example.chat.chatroom;
+package data.chat.chatroom;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package org.example.chat.config;
+package data.chat.config;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;

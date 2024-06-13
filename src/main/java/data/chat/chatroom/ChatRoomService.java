@@ -1,13 +1,13 @@
-package org.example.chat.chatroom;
+package data.chat.chatroom;
 
 import data.mapper.ChatRoomMapperInter;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class ChatRoomService {
     private final ChatRoomMapperInter chatRoomMapperInter;
     public String getChatRoomId(
@@ -24,6 +24,7 @@ public class ChatRoomService {
                 String chatId = createChatId(senderId, recipientId);
                 return chatId;
             }
+            return null;
         }
         return dto.getChatId();
     }

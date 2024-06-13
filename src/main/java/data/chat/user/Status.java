@@ -1,4 +1,4 @@
-package org.example.chat.user;
+package data.chat.user;
 
 public enum Status {
     ONLINE, OFFLINE

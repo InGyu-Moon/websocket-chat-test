@@ -1,4 +1,4 @@
-package org.example.chat.user;
+package data.chat.user;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,5 +9,5 @@ public class UserDto {
     //TODO
     private String nickName;
     private String fullName;
-    private Status status;
+    private String status;
 }
