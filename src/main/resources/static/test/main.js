@@ -182,6 +182,12 @@ function onLogout() {
         {},
         JSON.stringify({nickName: nickname, fullName: fullname, status: 'OFFLINE'})
     );
+
+    /**
+     * 웹소켓 연결 끊기
+     */
+    stompClient.disconnect();
+
     window.location.reload();
 }
 

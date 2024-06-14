@@ -13,9 +13,13 @@ public class UserService {
     private final UserMapperInter userMapperInter;
 
     public void saveUser(UserDto user) {
-//        user.setStatus(Status.ONLINE);
-        user.setStatus("ONLINE");
-        userMapperInter.insertUser(user);
+        if(userMapperInter.findById(user.getNickName()) != null) {
+            user.setStatus("ONLINE");
+            userMapperInter.updateUser(user);
+        }else{
+            user.setStatus("ONLINE");
+            userMapperInter.insertUser(user);
+        }
     }
 
     public void disconnect(UserDto user) {
